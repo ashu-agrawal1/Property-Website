@@ -1,0 +1,300 @@
+.mb-srp__list {
+    width: 1024px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mb-srp__card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    cursor: pointer;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24), 0 1px 4px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24), 0 1px 4px 0 rgba(0, 0, 0, .12);
+    -webkit-transition: box-shadow .3s ease;
+    -moz-transition: box-shadow .3s ease;
+    -o-transition: box-shadow .3s ease;
+    transition: box-shadow .3s ease;
+    position: relative;
+}
+
+.mb-srp__card__container {
+    width: calc(100% - 210px);
+    height: auto;
+    padding: 16px 16px 8px;
+    display: flex;
+}
+
+.mb-srp__card__photo {
+    width: 216px;
+    height: auto;
+}
+
+.mb-srp__card__info {
+    width: calc(100% - 216px);
+    padding: 0 0 0 16px;
+    position: relative;
+}
+
+.mb-srp__card--title {
+    max-width: calc(100% - 95px);
+    color: #303030;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mb-srp__card__share--icon {
+    width: 22px;
+    height: 20px;
+    margin-right: 8px;
+    background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -29px -3883px;
+    display: block;
+    position: absolute;
+    right: 22px;
+    top: 4px;
+}
+
+.mb-srp__card__info-withoutburger .mb-srp__card__share--icon {
+    margin-right: 0;
+    right: 0;
+}
+
+.mb-srp__card__info-withoutburger .mb-srp__card__sort--icon {
+    right: 24px;
+}
+
+.mb-srp__card__sort--icon {
+    width: 22px;
+    height: 20px;
+    margin-right: 8px;
+    background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -21px -150px;
+    display: block;
+    position: absolute;
+    right: 55px;
+    top: 2px;
+}
+
+.mb-srp__card__summary {
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    margin: 8px 0 16px;
+    background-color: #f5f5f5;
+    position: relative;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    background-clip: padding-box;
+}
+
+.mb-srp__card__summary__list {
+    width: calc(100% - 24px);
+    height: 48px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mb-srp__card__summary__list--item:nth-child(3n+1) {
+    padding-left: 56px;
+}
+
+.mb-srp__card__summary__list--item {
+    width: 33.33333%;
+    padding: 0 8px 0 56px;
+    margin: 8px 0;
+    border-right: 1px solid #d7d7d7;
+    position: relative;
+}
+
+.mb-srp__card__usp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+}
+
+.mb-srp__card--desc.remove-truncated {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+.mb-srp__card--desc {
+    width: 100%;
+    padding-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mb-srp__card--desc--text {
+    display: inline;
+}
+
+.mb-srp__card__estimate {
+    width: 210px;
+    height: auto;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    flex-direction: row;
+    background-color: #f5f5f5;
+    -webkit-border-radius: 0 8px 8px 0;
+    -moz-border-radius: 0 8px 8px 0;
+    -o-border-radius: 0 8px 8px 0;
+    border-radius: 0 8px 8px 0;
+    background-clip: padding-box;
+}
+
+.mb-srp__card__price {
+    width: 100%;
+    height: auto;
+    align-self: flex-start;
+}
+
+.mb-srp__card__price--amount {
+    color: #303030;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mb-srp__action {
+    width: 100%;
+    height: auto;
+}
+
+.mb-srp__card__summary__action {
+    width: 24px;
+    height: auto;
+    background: hsla(0, 0%, 91%, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mb-srp__card__action {
+    align-self: flex-end;
+    padding-top: 24px;
+}
+
+.mb-srp__card--desc--text p {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 530px;
+    vertical-align: bottom;
+    word-wrap: break-word;
+}
+
+.mb-srp__card--desc--readmore {
+    color: #303030;
+    font-size: 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 3px;
+    position: relative;
+}
+
+.mb-srp__card__summary--value {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mb-srp__card__summary--label,
+.mb-srp__card__summary--value {
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mb-srp__action {
+    width: 100%;
+    height: auto;
+}
+
+.mb-srp__card__action {
+    align-self: flex-end;
+    padding-top: 24px;
+}
+
+.mb-srp__action.action--single .mb-srp__action--btn {
+    width: 100%;
+    margin-right: 0;
+}
+
+.mb-srp__card__action .mb-srp__action--btn:first-child {
+    margin-top: 0;
+}
+
+.mb-srp__action--btn.medium {
+    padding: 0 12px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.mb-srp__action--btn.btn-red {
+    color: #fff;
+    background-color: #d8232a;
+    border: 1px solid #d8232a;
+}
+
+.mb-srp__action--btn {
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif, Arial, Helvetica;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    background-clip: padding-box;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
