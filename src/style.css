@@ -40,6 +40,7 @@
   --dl-color-secondary-grey400: #eff0f2ff;
   --dl-space-space-oneandhalfunits: 24px;
 }
+
 .button {
   color: var(--dl-color-gray-black);
   display: inline-block;
@@ -49,6 +50,7 @@
   border-radius: 4px;
   background-color: var(--dl-color-gray-white);
 }
+
 .input {
   color: var(--dl-color-gray-black);
   cursor: auto;
@@ -58,6 +60,7 @@
   border-radius: 4px;
   background-color: var(--dl-color-gray-white);
 }
+
 .textarea {
   color: var(--dl-color-gray-black);
   cursor: auto;
@@ -67,6 +70,7 @@
   border-radius: 4px;
   background-color: var(--dl-color-gray-white);
 }
+
 .list {
   width: 100%;
   margin: 1em 0px 1em 0px;
@@ -75,32 +79,40 @@
   list-style-type: none;
   list-style-position: outside;
 }
+
 .list-item {
   display: list-item;
 }
+
 .teleport-show {
   display: flex !important;
   transform: none !important;
 }
+
 .heading2 {
   font-size: 2.5rem;
 }
+
 .heading3 {
   font-size: 1.8rem;
 }
+
 .sectionTitle {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1.2;
   text-transform: uppercase;
 }
+
 .heading1 {
   font-size: 4.5rem;
   font-weight: 700;
 }
+
 .heading4 {
   font-size: 1.2rem;
 }
+
 .Content {
   font-size: 16px;
   font-family: Inter;
@@ -109,6 +121,7 @@
   text-transform: none;
   text-decoration: none;
 }
+
 .Heading {
   font-size: 32px;
   font-family: Inter;
@@ -117,16 +130,20 @@
   text-transform: none;
   text-decoration: none;
 }
+
 @media(max-width: 767px) {
   .heading2 {
     font-size: 1.8rem;
   }
+
   .heading3 {
     font-size: 1.1rem;
   }
+
   .heading1 {
     font-size: 2.5rem;
   }
+
   .heading4 {
     font-size: 1.2rem;
   }

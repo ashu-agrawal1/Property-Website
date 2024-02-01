@@ -1,7 +1,7 @@
 import React from 'react'
 import './not-found.css'
 
-const NotFound = (props) => {
+const NotFound = () => {
   return (
     <div className="not-found-container">
       <h3>OOPS! PAGE NOT FOUND</h3>
