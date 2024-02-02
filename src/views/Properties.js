@@ -122,13 +122,14 @@ const FeatureCard = () => {
                 onChange={(e) => {
                   setFilters({ ...filters, Bedrooms: e.target.value })
                 }}
+                className='input-field-login'
               />
             </div>
           </div>
           <div className="search-container" style={{ marginTop: "25px" }}>
             <div>
               <span>Property Type</span>
-              <Select
+              {/* <Select
                 options={propertyTypes}
                 isClearable
                 isSearchable
@@ -136,7 +137,18 @@ const FeatureCard = () => {
                   console.log(e)
                   setFilters({ ...filters, propertyType: e?.value })
                 }}
-              />
+                className='form-select '
+              /> */}
+              <select class="form-select form-select-lg" onChange={(e) => {
+                console.log(e)
+                setFilters({ ...filters, propertyType: e?.value })
+              }}>
+                {propertyTypes?.map((p) => {
+                  return (
+                    <option value={p.value}>{p.label}</option>
+                  )
+                })}
+              </select>
             </div>
             <div style={{ textAlign: 'left' }}>
               <div>
@@ -153,29 +165,33 @@ const FeatureCard = () => {
                 onChange={(e) => {
                   setFilters({ ...filters, Bathrooms: e.target.value })
                 }}
+                className='input-field-login'
               />
             </div>
           </div>
 
           <div className="search-container" style={{ marginTop: "15px" }}>
-            <button type="button" className="button" onClick={searchHandler}>
+            <button type="button" className="btn-login" onClick={searchHandler} style={{ marginRight: "15px" }}>
               Search
             </button>
-            <button type="button" className="button" onClick={clearHandler}>
+            <button type="button" className="btn-login" onClick={clearHandler}>
               Clear Filters
             </button>
           </div>
         </div>
       </div>
-      <div>
-        {properties.map((property) => (
-          <div className="filters">
-            <Property data={property} />
+      {properties?.length > 0 &&
+        <div className="container">
+          <div className="row">
+            {properties?.map((property) => (
+              <div className="col">
+                <Property data={property} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      }
     </div>
-
   )
 }
 
