@@ -7,6 +7,7 @@ import Select from 'react-select';
 import Slider from "../components/Slider"
 import Slider2 from "../components/Slider2"
 import axios from "axios";
+import FilProperties from '../components/FilProperties';
 
 const baseurl = process.env.REACT_APP_BASE_URL;
 let minSize = 0;
@@ -93,93 +94,8 @@ const FeatureCard = () => {
   return (
     <div className="property-listing">
       <h1>Properties For Rent</h1>
-      <div className="filters">
-        <div>
-          <p>Filter Properties based on your choice</p>
-          <div className="search-container" style={{ marginTop: "25px" }}>
-            <div>
-              <span>City</span>
-              <Select
-                options={cities}
-                isClearable
-                isSearchable
-                onChange={(e) => {
-                  console.log(e)
-                  setFilters({ ...filters, city: e?.value })
-                }}
-              />
-            </div>
-            <div style={{ textAlign: 'left' }}>
-              <span>Price:</span>
-              <Slider Values={PriceValues}></Slider>
-            </div>
-            <div>
-              <span>Bedrooms</span>
-              <input
-                type="number"
-                name="type"
-                value={filters.Bedrooms}
-                onChange={(e) => {
-                  setFilters({ ...filters, Bedrooms: e.target.value })
-                }}
-                className='input-field-login'
-              />
-            </div>
-          </div>
-          <div className="search-container" style={{ marginTop: "25px" }}>
-            <div>
-              <span>Property Type</span>
-              {/* <Select
-                options={propertyTypes}
-                isClearable
-                isSearchable
-                onChange={(e) => {
-                  console.log(e)
-                  setFilters({ ...filters, propertyType: e?.value })
-                }}
-                className='form-select '
-              /> */}
-              <select class="form-select form-select-lg" onChange={(e) => {
-                console.log(e)
-                setFilters({ ...filters, propertyType: e?.value })
-              }}>
-                {propertyTypes?.map((p) => {
-                  return (
-                    <option value={p.value}>{p.label}</option>
-                  )
-                })}
-              </select>
-            </div>
-            <div style={{ textAlign: 'left' }}>
-              <div>
-                <span>Size(in Sqr ft):</span>
-                <Slider2 Values={SizeValues}></Slider2>
-              </div>
-            </div>
-            <div>
-              <span>Bathrooms</span>
-              <input
-                type="number"
-                name="type"
-                value={filters.Bathrooms}
-                onChange={(e) => {
-                  setFilters({ ...filters, Bathrooms: e.target.value })
-                }}
-                className='input-field-login'
-              />
-            </div>
-          </div>
 
-          <div className="search-container" style={{ marginTop: "15px" }}>
-            <button type="button" className="btn-login" onClick={searchHandler} style={{ marginRight: "15px" }}>
-              Search
-            </button>
-            <button type="button" className="btn-login" onClick={clearHandler}>
-              Clear Filters
-            </button>
-          </div>
-        </div>
-      </div>
+      <FilProperties />
       {properties?.length > 0 &&
         <div className="container">
           <div className="row">

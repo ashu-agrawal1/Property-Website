@@ -26,7 +26,7 @@ const Home = () => {
       <div className='head'>
         <div className="home-header">
           <header data-thq="thq-navbar" className="home-navbar-interactive">
-            <span className="home-logo">REALSPACE</span>
+            <span className="home-logo"><img src="imgs/logo.svg" alt="" /></span>
             <div data-thq="thq-mobile-menu" className="home-mobile-menu">
               <div className="home-nav">
                 <div className="home-top">

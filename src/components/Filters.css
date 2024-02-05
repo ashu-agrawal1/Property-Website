@@ -1,0 +1,17 @@
+.filters-f {
+    width: 250px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding: 10px;
+}
+.f-p{
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px;
+
+}
+.f-container{
+    display: flex;
+    flex-direction: column;
+}
