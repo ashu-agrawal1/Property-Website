@@ -20,22 +20,30 @@ export default function FilProperties() {
         axios({
             method: "get",
             url: baseurl + "/properties/cities",
-        }).then((res) => {
-            console.log(res.data)
-            let temp = res.data?.map((type) => {
-                return { label: type.city, value: type.city }
+        })
+            .then((res) => {
+                console.log(res.data)
+                let temp = res.data?.map((type) => {
+                    return { label: type.city, value: type.city }
+                })
+                setCities(temp)
             })
-            setCities(temp)
-        });
+            .catch(e => {
+                console.log(e);
+            })
     };
     const getProperties = () => {
         axios({
             method: "get",
             url: baseurl + "/properties",
-        }).then((res) => {
-            console.log(res.data)
-            setProperties(res.data)
-        });
+        })
+            .then((res) => {
+                console.log(res.data)
+                setProperties(res.data)
+            })
+            .catch(e => {
+                console.log(e);
+            })
     };
 
     const searchHandler = () => {
@@ -43,10 +51,14 @@ export default function FilProperties() {
             method: "post",
             url: baseurl + "/properties/filter",
             data: { ...filters, minSize, maxSize, maxPrice, minPrice }
-        }).then((res) => {
-            console.log(res.data)
-            setProperties(res.data)
-        });
+        })
+            .then((res) => {
+                console.log(res.data)
+                setProperties(res.data)
+            })
+            .catch(e => {
+                console.log(e);
+            })
     };
     const clearHandler = () => {
         getProperties()
@@ -63,13 +75,17 @@ export default function FilProperties() {
         axios({
             method: "get",
             url: baseurl + "/propertyTypes",
-        }).then((res) => {
-            console.log(res.data)
-            let temp = res.data?.map((type) => {
-                return { label: type.title, value: type._id }
+        })
+            .then((res) => {
+                console.log(res.data)
+                let temp = res.data?.map((type) => {
+                    return { label: type.title, value: type._id }
+                })
+                setPropertyTypes(temp)
             })
-            setPropertyTypes(temp)
-        });
+            .catch(e => {
+                console.log(e);
+            })
     };
 
     const SizeValues = (min, max) => {
@@ -156,18 +172,18 @@ export default function FilProperties() {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label for="bedrooms">Bedrooms</label>
+                    <label htmlFor="bedrooms">Bedrooms</label>
                     <input type="number" className="form-control" id="bedrooms" max={"10"} value={filters.Bedrooms} onChange={(e) => {
                         setFilters({ ...filters, Bedrooms: e.target.value })
                     }} />
                 </div>
                 <div className="form-group">
-                    <label for="bathrooms">Bathrooms</label>
+                    <label htmlFor="bathrooms">Bathrooms</label>
                     <input type="number" className="form-control" id="bathrooms" max={"10"} value={filters.Bathrooms} onChange={(e) => {
                         setFilters({ ...filters, Bathrooms: e.target.value })
                     }} />
                 </div>
-                
+
                 <div>
                     <button type="button" className="btn-login" onClick={searchHandler} style={{ marginRight: "15px" }}>
                         Search

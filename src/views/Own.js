@@ -13,25 +13,28 @@ const Own = () => {
     axios({
       method: "get",
       url: baseurl + "/properties/own",
-    }).then((res) => {
-      console.log(res.data)
-      setProperties(res.data)
-    }).catch((err) => {
-      console.log(err)
-      alert(err?.response?.data);
-      navigate("/login")
     })
+      .then((res) => {
+        console.log(res.data)
+        setProperties(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+        alert(err?.response?.data);
+        navigate("/login")
+      })
   };
 
   const deleteHandler = (id) => {
     axios({
       method: "delete",
       url: baseurl + "/properties/" + id,
-    }).then((res) => {
-      console.log(res.data)
-      alert("Property Deleted Successfully")
-      getProperties()
     })
+      .then((res) => {
+        console.log(res.data)
+        alert("Property Deleted Successfully")
+        getProperties()
+      })
       .catch((err) => {
         console.log(err)
         alert(err?.response?.data?.error);

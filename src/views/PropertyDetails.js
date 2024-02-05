@@ -15,23 +15,27 @@ export default function PropertyDetails() {
         axios({
             method: "get",
             url: baseurl + `/properties/${id}`,
-        }).then((res) => {
-            console.log(res.data)
-            setPropertyDetails(res.data)
-        }).catch((err) => {
-            console.log(err)
         })
+            .then((res) => {
+                console.log(res.data)
+                setPropertyDetails(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     };
     const getPropertyTypes = () => {
         axios({
             method: "get",
             url: baseurl + "/propertyTypes",
-        }).then((res) => {
-            console.log(res.data)
-            setPropertyTypes(res.data)
-        }).catch((err) => {
-            console.log(err)
         })
+            .then((res) => {
+                console.log(res.data)
+                setPropertyTypes(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     };
     useEffect(() => {
         getPropertyTypes()

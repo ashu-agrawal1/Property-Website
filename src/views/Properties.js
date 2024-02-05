@@ -24,22 +24,30 @@ const FeatureCard = () => {
     axios({
       method: "get",
       url: baseurl + "/properties/cities",
-    }).then((res) => {
-      console.log(res.data)
-      let temp = res.data?.map((type) => {
-        return { label: type.city, value: type.city }
+    })
+      .then((res) => {
+        console.log(res.data)
+        let temp = res.data?.map((type) => {
+          return { label: type.city, value: type.city }
+        })
+        setCities(temp)
       })
-      setCities(temp)
-    });
+      .catch(e => {
+        console.log(e);
+      })
   };
   const getProperties = () => {
     axios({
       method: "get",
       url: baseurl + "/properties",
-    }).then((res) => {
-      console.log(res.data)
-      setProperties(res.data)
-    });
+    })
+      .then((res) => {
+        console.log(res.data)
+        setProperties(res.data)
+      })
+      .catch(e => {
+        console.log(e);
+      })
   };
 
   const searchHandler = () => {
@@ -47,10 +55,14 @@ const FeatureCard = () => {
       method: "post",
       url: baseurl + "/properties/filter",
       data: { ...filters, minSize, maxSize, maxPrice, minPrice }
-    }).then((res) => {
-      console.log(res.data)
-      setProperties(res.data)
-    });
+    })
+      .then((res) => {
+        console.log(res.data)
+        setProperties(res.data)
+      })
+      .catch(e => {
+        console.log(e);
+      })
   };
   const clearHandler = () => {
     getProperties()
@@ -67,13 +79,17 @@ const FeatureCard = () => {
     axios({
       method: "get",
       url: baseurl + "/propertyTypes",
-    }).then((res) => {
-      console.log(res.data)
-      let temp = res.data?.map((type) => {
-        return { label: type.title, value: type._id }
+    })
+      .then((res) => {
+        console.log(res.data)
+        let temp = res.data?.map((type) => {
+          return { label: type.title, value: type._id }
+        })
+        setPropertyTypes(temp)
       })
-      setPropertyTypes(temp)
-    });
+      .catch(e => {
+        console.log(e);
+      })
   };
 
   const SizeValues = (min, max) => {

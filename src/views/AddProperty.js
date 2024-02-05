@@ -17,15 +17,17 @@ const AddProperty = () => {
         axios({
             method: "get",
             url: baseurl + "/propertyTypes",
-        }).then((res) => {
-            console.log(res.data)
-            let temp = res.data?.map((type) => {
-                return { label: type.title, value: type._id }
-            })
-            setPropertyTypes(temp)
-        }).catch((err) => {
-            console.log(err)
         })
+            .then((res) => {
+                console.log(res.data)
+                let temp = res.data?.map((type) => {
+                    return { label: type.title, value: type._id }
+                })
+                setPropertyTypes(temp)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     };
 
     const handleSubmit = (e) => {
