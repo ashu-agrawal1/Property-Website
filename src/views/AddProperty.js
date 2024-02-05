@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import "./AddProperty.css"
 import axios from "axios";
 import Map from '../components/Map';
-import Select from 'react-select';
 
 const baseurl = process.env.REACT_APP_BASE_URL;
 
@@ -32,6 +31,7 @@ const AddProperty = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("formData", formData);
         if (!formData.title || !formData.propertyType || !formData.description || !formData.price || !formData.Size || !formData.Bedrooms || !formData.Bathrooms || !formData.address) {
             alert("Please fill all the details")
             return
@@ -68,117 +68,89 @@ const AddProperty = () => {
             <div className="filters">
                 <div>
                     <p>Please Tell us about your Property</p>
-                    <div className="search-container" style={{ marginTop: "25px" }}>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Title:</span>
-                            <input
-                                type="text"
-                                name="type"
-                                value={formData.title}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, title: e.target.value })
-                                }}
-                            />
-                        </div>
-                        <div style={{ textAlign: 'left', margin: "0 10px" }}>
-                            <span>Property Type</span>
-                            <Select
-                                // value={formData.propertyType}
-                                options={propertyTypes}
-                                isClearable
-                                isSearchable
-                                onChange={(e) => {
-                                    console.log(e)
-                                    setFormData({ ...formData, propertyType: e?.value })
-                                }}
-                            />
-                        </div>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Bedrooms:</span>
-                            <input
-                                type="number"
-                                name="type"
-                                value={formData.Bedrooms}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, Bedrooms: e.target.value })
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <div className="search-container" style={{ marginTop: "20px" }}>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Size(In sqr ft):</span>
-                            <input
-                                type="number"
-                                name="type"
-                                value={formData.Size}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, Size: e.target.value })
-                                }}
-                            />
-                        </div>
-                        <div style={{ textAlign: 'left', margin: "0 10px" }}>
-                            <span>Price(Per Month):</span>
-                            <input
-                                type="number"
-                                name="type"
-                                value={formData.price}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, price: e.target.value })
-                                }}
-                            />
-                        </div>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Bathrooms:</span>
-                            <input
-                                type="number"
-                                name="type"
-                                value={formData.Bathrooms}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, Bathrooms: e.target.value })
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <div className="search-container" style={{ marginTop: "20px" }}>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Photos(upto 10):</span>
-                            <input
-                                type="file"
-                                multiple
-                                name='photos'
-                                accept="image/*"
-                                // value={formData.photos}
-                                onChange={(e) => {
+                    <form action="#">
+                        <div className="row">
 
-                                    photos = Array.prototype.slice.call(e.target.files)
-                                    setFormData({ ...formData, photos: photos })
-                                }}
-                            />
+                            <div className="form-group col-md-4">
+                                <label htmlFor="bedrooms">Title</label>
+                                <input type="text" className="form-control" value={formData.title} onChange={(e) => {
+                                    setFormData({ ...formData, title: e.target.value })
+                                }} />
+                            </div>
+
+                            <div className="form-group col-md-4">
+                                <label htmlFor="ptype">Property Type</label>
+                                <select className="form-control" id="ptype" onChange={(e) => {
+                                    console.log(e)
+                                    setFormData({ ...formData, propertyType: e?.target?.value })
+                                }}>
+                                    {propertyTypes?.map((p) => {
+                                        return (
+                                            <option value={p.value}>{p.label}</option>
+                                        )
+                                    })}
+                                </select>
+                            </div>
+
+                            <div className="form-group col-md-4">
+                                <label htmlFor="bedrooms">Bedrooms</label>
+                                <input type="number" className="form-control" id='bedrooms' value={formData.Bedrooms} name="type" onChange={(e) => {
+                                    setFormData({ ...formData, Bedrooms: e.target.value })
+                                }} />
+                            </div>
+
+                            <div className="form-group col-md-4">
+                                <label htmlFor="size">Size(In sqr ft)</label>
+                                <input type="number" className="form-control" id='size'
+                                    value={formData.Size} name="type" onChange={(e) => {
+                                        setFormData({ ...formData, Size: e.target.value })
+                                    }} />
+                            </div>
+                            <div className="form-group col-md-4">
+                                <label htmlFor="price">Price(Per Month):</label>
+                                <input type="number" className="form-control" id='price'
+                                    value={formData.price} name="type" onChange={(e) => {
+                                        setFormData({ ...formData, price: e.target.value })
+                                    }} />
+                            </div>
+                            <div className="form-group col-md-4">
+                                <label htmlFor="price">Bathrooms:</label>
+                                <input type="number" className="form-control" id='price'
+                                    value={formData.Bathrooms} name="type" onChange={(e) => {
+                                        setFormData({ ...formData, Bathrooms: e.target.value })
+                                    }} />
+                            </div>
+
+
+                            <div className="form-group col-md-4">
+                                <label htmlFor="price">Photos(upto 10):</label>
+                                <input type="file" multiple
+                                    name='photos' className="form-control" id='price'
+                                    accept="image/*"
+                                    onChange={(e) => {
+
+                                        photos = Array.prototype.slice.call(e.target.files)
+                                        setFormData({ ...formData, photos: photos })
+                                    }} />
+                            </div>
+
+                            <div className="form-group col-md-4">
+                                <label htmlFor="desc">Description</label>
+                                <textarea className="form-control" id="desc" rows="3"
+                                    value={formData.description} onChange={(e) => {
+                                        setFormData({ ...formData, description: e.target.value })
+                                    }}></textarea>
+                            </div>
+                            <div className="form-group col-md-4">
+                                <label htmlFor="desc">Address</label>
+                                <textarea className="form-control" id="desc" rows="3"
+                                    value={formData.address} onChange={(e) => {
+                                        setFormData({ ...formData, address: e.target.value })
+                                    }}
+                                ></textarea>
+                            </div>
                         </div>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Description:</span>
-                            <input
-                                type="text"
-                                name="type"
-                                value={formData.description}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, description: e.target.value })
-                                }}
-                            />
-                        </div>
-                        <div style={{ margin: "0 10px" }}>
-                            <span>Address:</span>
-                            <input
-                                type="text"
-                                name="type"
-                                value={formData.address}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, address: e.target.value })
-                                }}
-                            />
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <p>Please Select location of the Property</p>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Filters.css"
 import Select from 'react-select';
-
 import Slider from "./Slider"
 import Slider2 from "./Slider2"
 import axios from "axios";
@@ -10,6 +9,7 @@ let minSize = 0;
 let maxSize = 50000;
 let minPrice = 0;
 let maxPrice = 50000;
+
 export default function FilProperties() {
     const [filters, setFilters] = useState({
         propertyType: '', city: '', Bedrooms: '', Bathrooms: ''
