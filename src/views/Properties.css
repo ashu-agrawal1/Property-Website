@@ -1,6 +1,7 @@
 .property-listing {
     text-align: center;
     padding: 20px;
+    background-color: #c6beee1f;
 }
 
 .filters {
@@ -13,12 +14,14 @@ body {
     font: 16px Arial, Verdana, Tahoma, Sans-serif;
 }
 
-/* .container {
-    width: 852px;
-    background: #ccc;
+.container {
     margin: 0 auto;
     padding: 16px;
-} */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 .wrapper {
     margin: 8px 0;
@@ -122,4 +125,7 @@ body {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+}
+.body-container{
+    display : flex;
 }

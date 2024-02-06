@@ -4,12 +4,18 @@
     align-items: center;
     justify-content: center; */
     padding: 10px;
+    background-color: white;
+    border: 1px solid #FFFFFF;
+    border-radius: 11px;
 }
 .f-p{
     font-weight: 600;
     font-size: 18px;
     padding: 5px;
-
+    border-radius: 16px;
+    background-color: #faebd7c9;
+    font-family: Kanit;
+    font-weight: 500;
 }
 .f-container{
     display: flex;
