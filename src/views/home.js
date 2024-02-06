@@ -4,6 +4,20 @@ import GalleryCard3 from '../components/gallery-card3'
 import Question from '../components/question'
 import './home.css'
 
+const cardImages = [
+  "imgs/cardImgs/card1.jpg",
+  "imgs/cardImgs/card2.jpg",
+  "imgs/cardImgs/card3.jpg",
+  "imgs/cardImgs/card4.jpg",
+  "imgs/cardImgs/card5.jpg",
+  "imgs/cardImgs/card6.jpg",
+  "imgs/cardImgs/card7.jpg",
+  "imgs/cardImgs/card8.jpg",
+  "imgs/cardImgs/card9.jpg",
+  "imgs/cardImgs/card10.jpg",
+  "imgs/cardImgs/card11.jpg",
+  "imgs/cardImgs/card12.jpg",
+]
 const Home = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -132,54 +146,16 @@ const Home = () => {
             Browse through our gallery to see the available rental spaces
           </span>
           <div className="home-container29">
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1625635978568-497c0af29e94?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName1"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName3"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName2"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1449100840062-49e9aca7c8ec?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName4"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1564053051381-5cb91813736b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName5"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1454817481404-7e84c1b73b4a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName6"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1615627121117-e3278bc8b1db?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName7"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1508693484929-012827ef8c81?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName8"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1451188214936-ec16af5ca155?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName9"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName10"
-            ></GalleryCard3>
-            <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1684637936464-34be683afd4c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTQ3NjEyNXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
-              rootClassName="rootClassName11"
-            ></GalleryCard3>
+            {cardImages?.length > 0 &&
+              cardImages?.map(img => {
+                return (
+                  <GalleryCard3
+                    image_src={img}
+                    rootClassName="rootClassName"
+                  ></GalleryCard3>
+                )
+              })
+            }
           </div>
         </div>
       </div>
