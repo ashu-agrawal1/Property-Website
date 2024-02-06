@@ -1,14 +1,13 @@
 .filters-f {
+    min-width: 250px;
     width: 250px;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     padding: 10px;
     background-color: white;
     border: 1px solid #FFFFFF;
     border-radius: 11px;
 }
-.f-p{
+
+.f-p {
     font-weight: 600;
     font-size: 18px;
     padding: 5px;
@@ -17,7 +16,8 @@
     font-family: Kanit;
     font-weight: 500;
 }
-.f-container{
+
+.f-container {
     display: flex;
     flex-direction: column;
 }

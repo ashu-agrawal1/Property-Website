@@ -33,7 +33,7 @@ const Property = ({ data, isDelete, deleteHandler }) => {
           </div>
           <div className="mb-home__owner-prop__card--content">
             <div className="mb-home__owner-prop__card--type">
-              {data.propertyType}
+              {data.title}
             </div>
             <div className="mb-home__owner-prop__card--price">
               <span className="rupees">₹</span>

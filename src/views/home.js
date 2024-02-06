@@ -18,21 +18,40 @@ const cardImages = [
   "imgs/cardImgs/card11.jpg",
   "imgs/cardImgs/card12.jpg",
 ]
+function animate(els) {
+  let windowHeight = window.innerHeight;
+  let revealPoint = 150;
+  els.forEach(el => {
+    if (el.getBoundingClientRect().top < windowHeight - revealPoint) {
+      el.classList.add("show")
+    }
+    else {
+      el.classList.remove("show")
+    }
+  });
+}
+function animateContent() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+      else {
+        entry.target.classList.remove("show")
+      }
+    })
+  })
+
+  const hiddenElemnts = document.querySelectorAll(".hidden2")
+  hiddenElemnts.forEach(el => observer.observe(el))
+
+  const hiddenElemnts2 = document.querySelectorAll(".hidden")
+  window.addEventListener("scroll", () => animate(hiddenElemnts2))
+}
+
 const Home = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else {
-          entry.target.classList.remove("show")
-        }
-      })
-    })
-
-    const hiddenElemnts = document.querySelectorAll(".hidden")
-    hiddenElemnts.forEach(el => observer.observe(el))
+    animateContent()
   }, [])
 
   return (
@@ -63,7 +82,7 @@ const Home = () => {
         </div>
         <div className="home-hero">
           <div className="home-hero1">
-            <div className="home-container01 hidden2 hidden">
+            <div className="home-container01 hidden2">
               <h1 className="home-hero-heading heading1">
                 Find Your Perfect Rental Space
               </h1>
