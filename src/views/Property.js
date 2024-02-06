@@ -24,7 +24,7 @@ const Property = ({ data, isDelete, deleteHandler }) => {
           <div className="mb-home__owner-prop__card--graphic">
             <img
               className="swiper-lazy swiper-lazy-loaded"
-              src={baseurl + "/" + data}
+              src={baseurl + '/' + data?.photos[0]}
               width={294}
               height={156}
               alt={data.title}
